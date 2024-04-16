@@ -37,10 +37,11 @@ tol = 10e-16; % [rad]
 n = 5; % []
 
 %% Calculations
-u = M + e; % [rad]
+% u = M + e; % [rad]
 % E_0 = (M * (1 - sin(u)) + u * sin(M)) / (1 + sin(M) - sin(u)); % [rad]
 
-F = @(E) E - e * sin(E) - M;
+% F = @(E) E - e * sin(E) - M;
+F = @(E) E - E_0 - e * (sin(E) - sin(E_0)) - M;
 Fprime = @(E) 1 - e * cos(E);
 Fprimeprime = @(E) e * sin(E);
 
