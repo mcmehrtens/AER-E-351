@@ -1,6 +1,6 @@
-function [C,Ceq] = rocket_constraint(deltaV_T, c, X, g)
+function [C,Ceq] = rocket_constraint(X, g)
 %ROCKET_CONSTRAINT Nonlinear inequality constraint to minimize mass.
-C = g(deltaV_T, c, X);
-Ceq = [];
+C = [];
+Ceq = g(X);
 end
 
